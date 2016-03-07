@@ -1,0 +1,59 @@
+2015-12-08 Frank Filthaut <F.Filthaut@science.ru.nl>
+	* BTaggingEfficiencyTool: remove constraints on non-b-tagging related variations in applySystematicVariation()
+	* tester code: update to October 2015 CDI file (using different naming convention for tagger operating points)
+	* tagging as xAODBTaggingEfficiency-00-00-26
+
+2015-10-27 Frank Filthaut <F.Filthaut@science.ru.nl>
+	* test destructor in BTaggingEfficiencyToolTester code
+	* tagging as xAODBTaggingEfficiency-00-00-25
+
+2015-10-26 Frank Filthaut <F.Filthaut@science.ru.nl>
+	* BTaggingEfficiencyTool: add a proper destructor!
+	* tagging as xAODBTaggingEfficiency-00-00-24
+
+2015-10-14 Christian Luedtke <cluedtke@cern.ch>, Michael Ughetto <mughetto@cern.ch>
+	* BTaggingSelectionTool: allow for track jets and for relative cuts; bug fix to high-pt protection
+	* tagging as xAODBTaggingEfficiency-00-00-23
+	
+2015-08-27 Frank Filthaut <F.Filthaut@science.ru.nl>
+	* BTaggingSelectionTool: build in extra protection against null BTagging object
+	* tagging as xAODBTaggingEfficiency-00-00-21
+
+2015-08-10 Frank Filthaut <F.Filthaut@science.ru.nl>
+	* BTaggingEfficiencyTool modifications:
+	  - allow for "continuous tagging" use of other MVA taggers than MV1
+	  - bug fix for "extrapolation from charm" uncertainty (NB this also needs CalibrationDataInterface-00-05-09 or newer):
+	    o  in the SFEigen model this wasn't indexed correctly, meaning that the effective uncertainty returned was always 0
+	    o  in the Envelope model it wasn't implemented properly, causing code to fail
+	  - add "FT_EFF_" prefixes for the uncertainties generally encountered in either the SFEigen or Envelope model
+	    (user-specified named uncertainties are not touched by this)
+	* remove testCDI.root (no longer needed) and the spurious .env file (never used by this package)
+	* tagging as xAODBTaggingEfficiency-00-00-20
+
+2015-07-30 Frank Filthaut <F.Filthaut@science.ru.nl>
+	* add printout messages in case of error returns of main methods
+	* tagging as xAODBTaggingEfficiency-00-00-19
+
+2015-07-17 Christian Luedtke <cluedtke@cern.ch>, Michael Ughetto <mughetto@cern.ch>, Valerio Dao <vdao@cern.ch>
+	* add first version of BTaggingSelectionTool
+	* tagging as xAODBTaggingEfficiency-00-00-18
+
+2015-07-03 Frank Filthaut <F.Filthaut@science.ru.nl>
+	* add other BTaggingEfficiencyTool public methods also as part of the IBTaggingEfficiencyTool interface (on request of TopAnalysis etc.)
+	* remove leading/trailing whitespace from property strings
+	* tagging as xAODBTaggingEfficiency-00-00-17
+
+2015-05-20 Frank Filthaut <F.Filthaut@science.ru.nl>
+	* change BTaggingEfficiencyToolTester code to use the new pre-recommendations file (on CVMFS) and MV2c20 tagger
+	* tagging as xAODBTaggingEfficiency-00-00-16
+
+2015-05-20 Frank Filthaut <F.Filthaut@science.ru.nl>
+	* implement (steering of) eigenvector variation reduction
+	* implement use of exclusive hadron / cone based labelling, and make it default
+	* tagging as xAODBTaggingEfficiency-00-00-15
+
+2015-02-11 Attila Krasznahorkay <Attila.Krasznahorkay@cern.ch>
+	* Disabled the generation of some additional dictionaries with
+	  ROOT 6 to get rid of some runtime warnings in
+	  AnalysisBase-2.1.X.
+	* Tagging as xAODBTaggingEfficiency-00-00-14

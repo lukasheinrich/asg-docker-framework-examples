@@ -1,0 +1,28 @@
+package xAODBTaggingEfficiency
+# $Id$
+
+use AtlasPolicy AtlasPolicy-*
+
+use AsgTools        AsgTools-*        Control/AthToolSupport
+use PATCore         PATCore-*         PhysicsAnalysis/AnalysisCommon
+use PATInterfaces   PATInterfaces-*   PhysicsAnalysis/AnalysisCommon
+use xAODJet         xAODJet-*         Event/xAOD
+use CalibrationDataInterface CalibrationDataInterface-* PhysicsAnalysis/JetTagging/JetTagPerformanceCalibration
+use xAODBTagging    xAODBTagging-*    Event/xAOD
+use AtlasReflex	    AtlasReflex-*     External -no-auto-imports
+use AtlasROOT       AtlasROOT-*       External
+
+private
+
+use PathResolver    PathResolver*     Tools
+use GaudiInterface  GaudiInterface-*  External
+use AthenaBaseComps AthenaBaseComps-* Control
+
+end_private
+
+library xAODBTaggingEfficiency *.cxx ../Root/*.cxx components/*.cxx
+apply_pattern component_library
+
+apply_pattern declare_joboptions files=../share/*.py
+apply_pattern declare_runtime files="-s=../share *.root *.xml *.env"
+apply_pattern lcgdict dict=xAODBTaggingEfficiency selectionfile=selection.xml headerfiles="../xAODBTaggingEfficiency/xAODBTaggingEfficiencyDict.h"
