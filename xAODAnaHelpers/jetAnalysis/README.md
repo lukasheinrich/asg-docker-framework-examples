@@ -6,6 +6,6 @@ https://github.com/kratsg/OriginCorrectedJets based on AnalysisBase 2.3.38
 
 run with
    
-    docker run -it -v $HOME/user_globus:/root/.globus xah ./run/run.sh
+    docker run -it -v $HOME/user_globus:/root/.globus lukasheinrich/atlas-xah-jetanaexample ./run/run.sh
 
 where user_globus holds the user grid certificate information
